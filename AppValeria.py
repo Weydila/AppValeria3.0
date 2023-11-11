@@ -169,7 +169,7 @@ tabelaTab3.bind('<Button-3> ', deletClick3)
 # Labels de informação
 info1 = ttk.Label(janela,
                   text=" # Clicar sobre o item para selecionar uma tarefa.\n "
-                    "# Clicar 2 vezes sobre o item para atualizar tarefa.\n "
+                    "# Clicar 2 vezes sobre o item para atualizar uma tarefa.\n "
                     "# Selecionar e clicar com o botão esquerdo para remover a tarefa. ",
                   background='white')
 

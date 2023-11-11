@@ -5,21 +5,21 @@ import TM, tkinter
 # Definição da janela principal
 janela = Tk()
 janela.title('GERENCIADOR DE TAREFAS')
-janela.geometry('450x750')
+janela.geometry('450x700')
 janela.config(bg='white')
 janela.resizable(0,0)
-fundo = tkinter.PhotoImage(file="img.png")
+fundo = tkinter.PhotoImage(file="praia2.png")
 plano = tkinter.Label(janela, image=fundo)
 plano.place(x=0, y=0)
 
 # Variável que armazena a entrada do input da tarefa
 tarefaInput = tkinter.StringVar(janela)
 # Rotulo tarefa
-textoInput = tkinter.Label(janela, text="TAREFA", bg='white')
+textoInput = tkinter.Label(janela, text="TAREFA", bg='White')
 # Input para coleta do dado da tarefa
 tarefa = tkinter.Entry(janela, textvariable=tarefaInput, font=30)
 # Rotulo da prioridade
-label = ttk.Label(janela, text="PRIORIDADE: ", background='white')
+label = ttk.Label(janela, text="PRIORIDADE ", background='white')
 # Variavel que armazena a entrada do campo do combobox de prioridades
 qualprio = tkinter.StringVar()
 # Input da lista do combobox
@@ -31,9 +31,9 @@ prios["values"] = ["Alta", "Média", "Baixa"]
 # Criando um bloco de notebook
 bloco_status = ttk.Notebook(janela)
 # Criando novas tabs para o bloco de notebook
-tab1 = ttk.Frame(bloco_status, width=300, height=500)
-tab2 = ttk.Frame(bloco_status, width=300, height=500)
-tab3 = ttk.Frame(bloco_status, width=300, height=500)
+tab1 = ttk.Frame(bloco_status, width=200, height=400)
+tab2 = ttk.Frame(bloco_status, width=200, height=400)
+tab3 = ttk.Frame(bloco_status, width=200, height=400)
 # Armazena classe Treeview("tabela")
 tabelaTab1 = ttk.Treeview(tab1, selectmode='browse')
 tabelaTab2 = ttk.Treeview(tab2, selectmode='browse')
@@ -42,9 +42,9 @@ tabelaTab3 = ttk.Treeview(tab3, selectmode='browse')
 tabelaTab1.grid(row=1, column=1, padx=5, pady=5)
 tabelaTab1["columns"] = ("1", "2", "3", "4")
 tabelaTab1["show"] = 'headings'
-tabelaTab1.column("1", width=120, anchor='c')
-tabelaTab1.column("2", width=340, anchor='c')
-tabelaTab1.column("3", width=80, anchor='c')
+tabelaTab1.column("1", width=100, anchor='c')
+tabelaTab1.column("2", width=145, anchor='c')
+tabelaTab1.column("3", width=95, anchor='c')
 tabelaTab1.column("4", width=95, anchor='c')
 
 tabelaTab1.heading("1", text="STATUS")
@@ -56,9 +56,9 @@ tabelaTab1.heading("4", text="PRIORIDADE")
 tabelaTab2.grid(row=1, column=1, padx=5, pady=5)
 tabelaTab2["columns"] = ("1", "2", "3", "4")
 tabelaTab2["show"] = 'headings'
-tabelaTab2.column("1", width=120, anchor='c')
-tabelaTab2.column("2", width=340, anchor='c')
-tabelaTab2.column("3", width=80, anchor='c')
+tabelaTab2.column("1", width=100, anchor='c')
+tabelaTab2.column("2", width=145, anchor='c')
+tabelaTab2.column("3", width=95, anchor='c')
 tabelaTab2.column("4", width=95, anchor='c')
 
 tabelaTab2.heading("1", text="STATUS")
@@ -70,9 +70,9 @@ tabelaTab2.heading("4", text="PRIORIDADE")
 tabelaTab3.grid(row=1, column=1, padx=5, pady=5)
 tabelaTab3["columns"] = ("1", "2", "3", "4")
 tabelaTab3["show"] = 'headings'
-tabelaTab3.column("1", width=120, anchor='c')
-tabelaTab3.column("2", width=340, anchor='c')
-tabelaTab3.column("3", width=80, anchor='c')
+tabelaTab3.column("1", width=100, anchor='c')
+tabelaTab3.column("2", width=145, anchor='c')
+tabelaTab3.column("3", width=95, anchor='c')
 tabelaTab3.column("4", width=95, anchor='c')
 
 tabelaTab3.heading("1", text="STATUS")
@@ -168,19 +168,20 @@ tabelaTab3.bind('<Button-3> ', deletClick3)
 
 # Labels de informação
 info1 = ttk.Label(janela,
-                  text=" # Clique uma vez no item que deseja selecionar. \n\n \
-    # Selecione o item e clique duas vezes na tarefa para mudar o status.\n\n \
-    # Selecione o item e clique com o botão esquerdo para remove-lo. ", background='white', font=15)
+                  text=" # Clicar sobre o item para selecionar uma tarefa.\n "
+                    "# Clicar 2 vezes sobre o item para atualizar tarefa.\n "
+                    "# Selecionar e clicar com o botão esquerdo para remover a tarefa. ",
+                  background='white')
 
 # Adicionando os elementos dentro da janela principal
 textoInput.pack(pady=5)
-tarefa.pack(pady=5)
+tarefa.pack()
 label.pack()
 prios.pack()
 cal.pack()
 btn.pack()
 bloco_status.pack(pady=10, expand=True)
-info1.pack(ipady=10, pady=30)
+info1.pack(ipady=1, pady=25)
 tab1.pack(fill='both', expand=True)
 bloco_status.add(tab1, text="       NOVAS TAREFAS       ")
 tab2.pack(fill='both', expand=True)

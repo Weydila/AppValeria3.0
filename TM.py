@@ -93,3 +93,4 @@ class TaskManager():
 
         if filtro:
             return True
+
